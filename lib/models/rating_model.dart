@@ -8,4 +8,10 @@ RatingModel ({
   required this.count,
 });
 
+  factory RatingModel.fromJson(Map<String, dynamic> json) {
+    return RatingModel(
+      rate: (json['rate'] as num). toDouble(),
+      count: json ['count'],
+    );
+  }
 }
