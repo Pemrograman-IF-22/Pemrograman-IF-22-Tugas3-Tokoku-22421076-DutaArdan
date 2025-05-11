@@ -1,3 +1,5 @@
+import 'package:tokoku/models/rating_model.dart';
+
 class ProdukModel {
   final int id;
   final String title;
@@ -5,6 +7,7 @@ class ProdukModel {
   final String description;
   final String category;
   final String image;
+  final RatingModel rating;
 
 ProdukModel({
   required this.id,
@@ -13,6 +16,8 @@ ProdukModel({
   required this.description,
   required this.category,
   required this.image,
+  required this.rating,
+
   });
 
   factory ProdukModel.fromJson(Map<String, dynamic> json) {
@@ -23,6 +28,7 @@ ProdukModel({
       description: json['description'],
       category: json['category'],
       image: json['image'],
+      rating: RatingModel.fromJson(json['rating']),
     );
   }
 }
